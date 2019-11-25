@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: hystrix-dashboard
+server:
+  port: 1301
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

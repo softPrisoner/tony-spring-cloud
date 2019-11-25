@@ -1,0 +1,24 @@
+server:
+  port: 1201
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/softPrisoner/cloud-config
+          username: wabslygzj@163.com
+          password: 526161330@qq.com
+eureka:
+  instance:
+    ip-address: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    region: CN
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#encrypt:
+#  key: rainbow
+

@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: api-gateway
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    allow-redirects: true
+server:
+  port: 8090
+#zuul:
+#  routes:
+#    eureka-client1:
+#      path: /eureka-zuul-client/**
+#      #单url匹配
+#      #url: http://localhost:9001/
+#      #多实例url匹配
+#      serviceId: eureka-client1
+#ribbon:
+#  eureka:
+#    enabled: false
+#eureka-client1:
+#  ribbon:
+#    listOfServers: http://localhost:9001/,http://localhost:9002/
+zuul:
+  routes:
+    api-client:
+      path: /client/**
+      serviceId: eureka-client1-b
+    api-user:
+      path: /user/**
+      serviceId: EUREKA-USER-SERVICE
+      static:
+        path: /static/**
+        url: http://localhost:9001/static/
+      # 细粒度路由敏感头信息配置
+      sensitive-headers:
+      custorm-sentive-headers: true
+  add-host-header: true
+  #全局路由敏感头设置
+  #sensitive-headers:
+#  add-proxy-headers: true

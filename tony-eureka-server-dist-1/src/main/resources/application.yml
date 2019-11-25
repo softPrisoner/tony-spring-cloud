@@ -1,0 +1,17 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka-server
+  mvc:
+    favicon:
+      enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server-dist-2:8762/eureka/,http://eureka-server-dist-3:8763/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    ip-address: localhost
+    hostname: eureka-server-dist-1

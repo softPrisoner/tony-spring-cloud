@@ -1,0 +1,30 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: eureka-feign-client
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+#ribbon自动重试机制
+eureka-client1:
+  ribbon:
+    ConnectTimeout: 10000
+    ReadTimeout: 1000
+    MaxAutoRetries: 5
+    OkToRetryOnAllOperations: true
+    MaxAutoRetriesNextServer: 2
+
+eureka:
+  instance:
+    ip-address: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    region: CN
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+

@@ -1,0 +1,27 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: eureka-client1
+eureka:
+  instance:
+    ip-address: localhost
+    prefer-ip-address: true
+    appname: eureka-client1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    region: CN
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoint:
+    refresh:
+      enabled: true
+#  endpoints:
+#    web:
+#      #这里替换之后,发现优先级比controller高
+#      base-path: /test
+#      exposure:
+#        include: '*'
