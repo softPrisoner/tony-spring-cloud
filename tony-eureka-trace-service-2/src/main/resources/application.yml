@@ -1,0 +1,17 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: trace-service-2
+eureka:
+  instance:
+    ip-address: localhost
+    prefer-ip-address: true
+    appname: trace-service-2
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    region: CN
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

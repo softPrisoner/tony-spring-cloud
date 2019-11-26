@@ -27,9 +27,11 @@
         <module>tony-eureka-server-dist-2</module>
         <module>tony-eureka-server-dist-3</module>
         <module>tony-eureka-config-client</module>
-        <module>tony-eureka-zuul-2</module>
         <module>tony-eureka-auth-server1</module>
         <module>tony-eureka-user-service</module>
+        <module>tony-eureka-trace-service-1</module>
+        <module>tony-eureka-trace-service-2</module>
+        <module>tony-eureka-zipkin-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
