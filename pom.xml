@@ -31,7 +31,6 @@
         <module>tony-eureka-user-service</module>
         <module>tony-eureka-trace-service-1</module>
         <module>tony-eureka-trace-service-2</module>
-        <module>tony-eureka-zipkin-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -42,6 +41,7 @@
     <properties>
         <spring.boot.version>2.0.1.RELEASE</spring.boot.version>
         <fastjson.version>1.2.60</fastjson.version>
+        <lombok.version>1.18.6</lombok.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -67,6 +67,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
     <repositories>

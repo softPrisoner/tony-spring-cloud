@@ -10,20 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>tony-eureka-client1</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>tony-eureka-client1-feign</module>
+        <module>tony-eureka-client1-server</module>
+    </modules>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.60</version>
-        </dependency>
+
     </dependencies>
 
 </project>

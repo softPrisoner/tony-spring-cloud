@@ -1,9 +1,12 @@
 package com.tony.feign.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.tony.feign.service.TestService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author tony
@@ -13,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/feign")
 public class TestController {
-    @Autowired
-    TestClient testClient;
+    @Resource
+    private TestService testService;
 
-    @RequestMapping("/test/{id}")
+    @GetMapping("/test/{id}")
     public String test(@PathVariable String id) {
-        return testClient.test();
+        return testService.test(id);
 
     }
 }
